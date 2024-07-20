@@ -1,6 +1,7 @@
 "use client";
 
 import Header from "@/app/components/Header";
+import Hero from "@/app/components/Hero";
 import { AppContextProvider } from "@/app/contexts/appContext";
 import { useEffect } from "react";
 
@@ -20,6 +21,7 @@ export default function Home() {
     <AppContextProvider>
       <main className="">
         <Header />
+        <Hero />
       </main>
     </AppContextProvider>
   );

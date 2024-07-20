@@ -16,7 +16,9 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className="bg-primary text-secondary">{children}</body>
+      <body className="bg-primary text-secondary transition duration-500">
+        {children}
+      </body>
     </html>
   );
 }
