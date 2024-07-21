@@ -4,6 +4,8 @@ import Header from "@/app/components/Header";
 import Hero from "@/app/components/Hero";
 import { AppContextProvider } from "@/app/contexts/appContext";
 import { useEffect } from "react";
+import SuspenseBar from "@/app/components/SuspenseBar";
+import About from "@/app/components/About";
 
 export default function Home() {
   useEffect(() => {
@@ -19,9 +21,12 @@ export default function Home() {
 
   return (
     <AppContextProvider>
-      <main className="">
-        <Header />
+      <Header />
+
+      <main className="container mx-auto">
+        <SuspenseBar />
         <Hero />
+        <About />
       </main>
     </AppContextProvider>
   );
