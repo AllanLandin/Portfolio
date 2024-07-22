@@ -21,13 +21,18 @@ export default function Home() {
 
   return (
     <AppContextProvider>
-      <Header />
-
-      <main className="container mx-auto">
-        <SuspenseBar />
-        <Hero />
-        <About />
-      </main>
+      <div className="container h-screen mx-auto">
+        <div className="h-dvh">
+          <Header />
+          <div className="flex items-center justify-center h-full">
+            <Hero />
+          </div>
+        </div>
+        <div className="h-dvh">
+          <About />
+        </div>
+      </div>
+      <SuspenseBar />
     </AppContextProvider>
   );
 }

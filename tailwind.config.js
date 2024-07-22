@@ -18,6 +18,7 @@ module.exports = {
         primary: "rgb(var(--color-primary) / <alpha-value>)",
         secondary: "rgb(var(--color-secondary) / <alpha-value>)",
         emphasis: "rgb(var(--color-emphasis) / <alpha-value>)",
+        active: "rgb(var(--color-active) / <alpha-value>)",
       },
     },
   },

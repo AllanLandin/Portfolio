@@ -6,10 +6,12 @@
   --color-primary: 255 255 255;
   --color-secondary: 22 22 23;
   --color-emphasis: 0 102 255;
+  --color-active: 2 151 225;
 }
 
 .dark {
   --color-primary: 20 18 38;
   --color-secondary: 255 255 255;
   --color-emphasis: 114 96 199;
+  --color-active: 88 46 196;
 }
