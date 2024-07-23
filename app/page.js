@@ -6,6 +6,7 @@ import { AppContextProvider } from "@/app/contexts/appContext";
 import { useEffect } from "react";
 import SuspenseBar from "@/app/components/SuspenseBar";
 import About from "@/app/components/About";
+import Projects from "@/app/components/Projects";
 
 export default function Home() {
   useEffect(() => {
@@ -28,10 +29,10 @@ export default function Home() {
             <Hero />
           </div>
         </div>
-        <div className="h-dvh">
-          <About />
-        </div>
+        <About />
+        <Projects />
       </div>
+
       <SuspenseBar />
     </AppContextProvider>
   );

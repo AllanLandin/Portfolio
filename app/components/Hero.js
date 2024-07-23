@@ -13,13 +13,13 @@ export default function Hero() {
         <div className="flex gap-2">
           <Link
             href="/"
-            className="p-3 border border-emphasis rounded text-emphasis font-poppins hover:bg-emphasis hover:text-secondary"
+            className="p-3 border border-emphasis rounded text-emphasis font-poppins hover:bg-active hover:text-secondary"
           >
             Trabalhe comigo
           </Link>
           <Link
             href="/"
-            className="p-3 border border-emphasis rounded text-emphasis font-poppins hover:bg-emphasis hover:text-secondary"
+            className="p-3 border border-emphasis rounded text-emphasis font-poppins hover:bg-active hover:text-secondary"
           >
             Sobre mim
           </Link>
