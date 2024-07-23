@@ -15,7 +15,12 @@ export default function Projects() {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         {projects.map((project, index) => (
-          <Fade direction="up" delay={50 * index} triggerOnce>
+          <Fade
+            key={project.id + index}
+            direction="up"
+            delay={50 * index}
+            triggerOnce
+          >
             <ProjectCard key={project.id} project={project} />
           </Fade>
         ))}
