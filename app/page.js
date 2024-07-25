@@ -7,6 +7,8 @@ import { useEffect } from "react";
 import SuspenseBar from "@/app/components/SuspenseBar";
 import About from "@/app/components/About";
 import Projects from "@/app/components/Projects";
+import Contact from "@/app/components/Contact";
+import Footer from "@/app/components/Footer";
 
 export default function Home() {
   useEffect(() => {
@@ -22,17 +24,20 @@ export default function Home() {
 
   return (
     <AppContextProvider>
-      <div className="container h-screen mx-auto">
-        <div className="h-dvh">
-          <Header />
-          <div className="flex items-center justify-center h-full">
-            <Hero />
-          </div>
+      <Header />
+      <div className="container mx-auto">
+        <div className="h-screen flex items-center justify-center h-full">
+          <Hero />
         </div>
-        <About />
-        <Projects />
+        <div className="flex flex-col gap-9">
+          <About />
+          <Projects />
+          <Contact />
+        </div>
       </div>
-
+      <div className="mt-9">
+        <Footer />
+      </div>
       <SuspenseBar />
     </AppContextProvider>
   );

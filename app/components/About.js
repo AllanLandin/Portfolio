@@ -6,7 +6,10 @@ import { FaDownload } from "react-icons/fa6";
 export default function About() {
   return (
     <Fade direction="left" delay={1200} triggerOnce>
-      <article className="p-5 font-roboto leading-relaxed rounded text-2xl flex flex-col justify-around h-dvh">
+      <article
+        id="aboutme"
+        className="p-5 font-roboto leading-relaxed rounded text-2xl flex flex-col justify-around h-dvh"
+      >
         <h3 className="text-7xl text-center underline font-poppins">
           Sobre mim
         </h3>
@@ -34,11 +37,11 @@ export default function About() {
             Experiência Profissional
           </p>
           <p>
-            Venho da área administrativa e busco pela minha primeira
-            oportunidade na área de desenvolvimento. Já trabalhei em empresas
-            grandes e pequenas, possibilitando o aprendizado de como uma empresa
-            funciona. No mais, crio projetos pessoais para ganhar conhecimento e
-            experiência na área de TI.
+            Venho da área administrativa e atualmente não atuo na área de TI. Já
+            trabalhei em empresas grandes e pequenas, possibilitando o
+            aprendizado de como uma empresa funciona. Apesar de não atuar na
+            área de TI atualmente, sigo estudando, criando projetos e
+            desenvolvendo minhas habilidades com o desenvolvimento de softwares.
           </p>
         </section>
 
@@ -51,7 +54,7 @@ export default function About() {
         </a>
 
         <Link
-          href="/#projectsSection"
+          href="/#projects"
           className="self-center animate-bounce hover:bg-active bg-emphasis rounded-full p-3 mt-5"
         >
           <FaArrowDown className="text-secondary" />

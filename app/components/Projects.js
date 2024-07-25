@@ -2,6 +2,8 @@ import githubApi from "@/app/api/githubApi";
 import { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { Fade } from "react-awesome-reveal";
+import Link from "next/link";
+
 export default function Projects() {
   const [projects, setProjects] = useState([]);
   useEffect(() => {
@@ -9,7 +11,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <article id="projectsSection" className="h-dvh">
+    <article id="projects" className="min-h-dvh mb-8">
       <h2 className="text-7xl text-center underline font-poppins mb-9">
         Projetos
       </h2>

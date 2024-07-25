@@ -21,7 +21,7 @@ export default function Header() {
   }
 
   return (
-    <header className="p-5 flex justify-between items-center">
+    <header className="pt-5 px-5 flex justify-between items-center">
       <Link href="/#" className="font-poppins text-2xl">
         Allan Landin
       </Link>
