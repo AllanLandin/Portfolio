@@ -8,7 +8,7 @@ export default function About() {
     <Fade direction="left" delay={1200} triggerOnce>
       <article
         id="aboutme"
-        className="p-5 font-roboto leading-relaxed rounded text-2xl flex flex-col justify-around h-dvh"
+        className="p-5 font-roboto leading-relaxed rounded text-2xl flex flex-col justify-around min-h-dvh gap-9"
       >
         <h3 className="text-7xl text-center underline font-poppins">
           Sobre mim

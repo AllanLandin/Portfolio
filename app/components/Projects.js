@@ -2,7 +2,6 @@ import githubApi from "@/app/api/githubApi";
 import { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { Fade } from "react-awesome-reveal";
-import Link from "next/link";
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
