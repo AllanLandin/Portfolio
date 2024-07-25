@@ -2,11 +2,15 @@ import githubApi from "@/app/api/githubApi";
 import { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import { Fade } from "react-awesome-reveal";
+import sortProjects from "@/app/utils/sortProjects";
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
   useEffect(() => {
-    githubApi("AllanLandin").then((data) => setProjects(data));
+    githubApi("AllanLandin").then((data) => {
+      const sortedProjects = sortProjects(data);
+      setProjects(sortedProjects);
+    });
   }, []);
 
   return (
