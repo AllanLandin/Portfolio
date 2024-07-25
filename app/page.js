@@ -11,17 +11,6 @@ import Contact from "@/app/components/Contact";
 import Footer from "@/app/components/Footer";
 
 export default function Home() {
-  useEffect(() => {
-    let selectedTheme = localStorage.getItem("theme");
-
-    if (selectedTheme) {
-      document.body.classList.add(selectedTheme);
-    } else {
-      document.body.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    }
-  });
-
   return (
     <AppContextProvider>
       <Header />

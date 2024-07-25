@@ -3,13 +3,17 @@ import { createContext, useEffect, useState } from "react";
 export const appContext = createContext({});
 
 export function AppContextProvider({ children }) {
-  let localTheme = "dark";
   const [theme, setTheme] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    localTheme = localStorage.getItem("theme");
-    setTheme(localTheme);
+    let selectedTheme = localStorage.getItem("theme");
+    if (!selectedTheme) {
+      selectedTheme = "dark";
+    }
+    document.body.classList.add(selectedTheme);
+    localStorage.setItem("theme", selectedTheme);
+    setTheme(selectedTheme);
   }, []);
 
   return (
