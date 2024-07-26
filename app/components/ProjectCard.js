@@ -9,13 +9,16 @@ export default function ProjectCard({ project }) {
         <p className="text-xl font-poppins">{project.name}</p>
         <p>{project.description}</p>
       </div>
+
       <div className="text-emphasis flex items-center justify-around text-3xl">
-        <Link
-          href={project.homepage || "/"}
-          className="hover:text-active transition"
-        >
-          <IoIosLink />
-        </Link>
+        {project.homepage && (
+          <Link
+            href={project.homepage || "/"}
+            className="hover:text-active transition"
+          >
+            <IoIosLink />
+          </Link>
+        )}
         <Link
           href={project.html_url || "/"}
           className="hover:text-active transition"
