@@ -5,7 +5,7 @@ import { FaDownload } from "react-icons/fa6";
 
 export default function About() {
   return (
-    <Fade direction="left" delay={1200} triggerOnce>
+    <Fade direction="left" delay={1000} triggerOnce>
       <article
         id="aboutme"
         className="p-5 font-roboto leading-relaxed rounded text-2xl flex flex-col justify-around min-h-dvh gap-9"
@@ -47,8 +47,8 @@ export default function About() {
 
         <a
           className="py-3 px-5 bg-emphasis rounded-full hover:bg-active transition flex items-center justify-center self-center flex items-center gap-3"
-          href=""
-          download=""
+          href="/documents/AllanLandin_CV.pdf"
+          download="AllanLandin_CV.pdf"
         >
           <div>Download CV</div> <FaDownload />
         </a>

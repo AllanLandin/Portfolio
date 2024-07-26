@@ -1,8 +1,15 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function NotFound() {
   return (
     <div className="h-dvh w-vh bg-slate-300 flex flex-col items-center justify-center gap-3 bg-primary">
+      <Image
+        src="/images/notFound.png"
+        height={2000 / 3}
+        width={2000 / 3}
+        alt="not found image"
+      ></Image>
       <p className="text-3xl font-poppins">Página não encontrada!</p>
       <Link
         href="/"
