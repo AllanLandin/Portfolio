@@ -38,7 +38,7 @@ export default function About() {
           </p>
           <p>
             Venho da área administrativa e atualmente não atuo na área de TI. Já
-            trabalhei em empresas grandes e pequenas, possibilitando o
+            trabalhei em pequenas e grandes empresas, possibilitando o
             aprendizado de como uma empresa funciona. Apesar de não atuar na
             área de TI atualmente, sigo estudando, criando projetos e
             desenvolvendo minhas habilidades com o desenvolvimento de softwares.
