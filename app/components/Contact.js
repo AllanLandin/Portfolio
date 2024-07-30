@@ -1,7 +1,17 @@
-import Link from "next/link";
 import { MdEmail } from "react-icons/md";
+import sendEmail from "../api/sendEmail";
+import { useState } from "react";
 
 export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  async function sendMessage(e) {
+    e.preventDefault();
+    await sendEmail({ name, email, message });
+  }
+
   return (
     <section
       id="contacts"
@@ -38,6 +48,10 @@ export default function Contact() {
                   id="name"
                   type="text"
                   className="border border-secondary bg-primary w-full rounded p-2 text-secondary"
+                  value={name}
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
                 ></input>
               </div>
               <div className="flex flex-col gap-2 flex-grow">
@@ -48,6 +62,10 @@ export default function Contact() {
                   id="email"
                   type="email"
                   className="border border-secondary bg-primary w-full rounded p-2 text-secondary"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
                 ></input>
               </div>
             </div>
@@ -59,12 +77,17 @@ export default function Contact() {
                 id="message"
                 type="text"
                 className="resize-y min-h-80 border border-secondary bg-primary w-full rounded p-2 text-secondary "
+                value={message}
+                onChange={(e) => {
+                  setMessage(e.target.value);
+                }}
               ></textarea>
             </div>
           </div>
           <button
             type="submit"
             className="bg-emphasis rounded-full shadow hover:bg-active px-9 py-2 self-center"
+            onClick={sendMessage}
           >
             Enviar Mensagem
           </button>
