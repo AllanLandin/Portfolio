@@ -1,26 +1,28 @@
 "use server";
 
-import { SMTPClient } from "emailjs";
+import nodemailer from "nodemailer";
 
-const emailClient = new SMTPClient({
-  user: process.env.SMTP_USER,
-  password: process.env.SMTP_PASSWORD,
+const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: process.env.SMTP_PORT,
-  authentication: ["PLAIN", "LOGIN"],
-  ssl: false,
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASSWORD,
+  },
 });
 
 export default async function sendEmail({ name, email, message }) {
   try {
-    const result = await emailClient.sendAsync({
+    const info = await transporter.sendMail({
+      from: process.env.EMAIL,
+      to: process.env.EMAIL,
+      replyTo: email,
       text: message,
-      from: "allan.landin25@gmail.com",
-      to: "allan.landin25@gmail.com",
-      subject: `${name} te mandou mensagem pelo seu porfólio! - ${email}`,
+      subject: `${name} te mandou uma mensagem pelo seu portfólio!`,
     });
-    console.log("Email enviado");
-    console.log(result);
+
+    console.log("teste!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    console.log(info);
   } catch (error) {
     console.log(error);
     throw error;
