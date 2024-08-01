@@ -1,15 +1,33 @@
 import { MdEmail } from "react-icons/md";
-import sendEmail from "../api/sendEmail";
 import { useState } from "react";
+import toast from "react-hot-toast";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 export default function Contact() {
+  const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
   async function sendMessage(e) {
     e.preventDefault();
-    await sendEmail({ name, email, message });
+    setLoading(true);
+    const response = await fetch("/api/sendEmail", {
+      method: "POST",
+      body: JSON.stringify({
+        name,
+        email,
+        message,
+      }),
+    });
+    const data = await response.json();
+    if (response.status === 200) {
+      setLoading(false);
+      toast.success(data.message);
+    } else {
+      setLoading(false);
+      toast.error(data.error);
+    }
   }
 
   return (
@@ -86,10 +104,14 @@ export default function Contact() {
           </div>
           <button
             type="submit"
-            className="bg-emphasis rounded-full shadow hover:bg-active px-9 py-2 self-center"
+            className="bg-emphasis rounded-full shadow hover:bg-active box-border w-40 h-10 self-center text-primary text-lg transition flex items-center justify-center"
             onClick={sendMessage}
           >
-            Enviar Mensagem
+            {loading ? (
+              <AiOutlineLoading3Quarters className="animate-spin" />
+            ) : (
+              <span>Enviar email</span>
+            )}
           </button>
         </form>
       </div>

@@ -11,8 +11,10 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-export default async function sendEmail({ name, email, message }) {
+export default async function sendEmail(req, res) {
   try {
+    const { name, email, message } = JSON.parse(req.body);
+
     const info = await transporter.sendMail({
       from: process.env.EMAIL,
       to: process.env.EMAIL,
@@ -20,11 +22,14 @@ export default async function sendEmail({ name, email, message }) {
       text: message,
       subject: `${name} te mandou uma mensagem pelo seu portfólio!`,
     });
-
-    console.log("teste!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-    console.log(info);
+    return res
+      .status(200)
+      .json({ status: "success", message: "Email enviado!" });
   } catch (error) {
-    console.log(error);
-    throw error;
+    console.error(error);
+    return res.status(503).json({
+      status: "error",
+      message: "Algo não deu certo... Tente novamente mais tarde",
+    });
   }
 }

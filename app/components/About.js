@@ -5,7 +5,7 @@ import { FaDownload } from "react-icons/fa6";
 
 export default function About() {
   return (
-    <Fade direction="left" delay={1000} triggerOnce>
+    <Fade direction="left" delay={500} triggerOnce>
       <article
         id="aboutme"
         className="p-5 font-roboto leading-relaxed rounded text-2xl flex flex-col justify-around min-h-dvh gap-9"

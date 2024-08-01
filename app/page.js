@@ -8,12 +8,13 @@ import About from "@/app/components/About";
 import Projects from "@/app/components/Projects";
 import Contact from "@/app/components/Contact";
 import Footer from "@/app/components/Footer";
+import { Toaster } from "react-hot-toast";
 
 export default function Home() {
   return (
     <AppContextProvider>
       <Header />
-      <div className="container mx-auto">
+      <div className="px-5 mx-auto">
         <div className="h-screen flex items-center justify-center h-full">
           <Hero />
         </div>
@@ -27,6 +28,7 @@ export default function Home() {
         <Footer />
       </div>
       <SuspenseBar />
+      <Toaster position="bottom-right" />
     </AppContextProvider>
   );
 }
